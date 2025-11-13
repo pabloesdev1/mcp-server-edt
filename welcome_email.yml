@@ -1,0 +1,24 @@
+name: Welcome Email Generator
+description: Genera un correo electrónico de bienvenida para nuevos clientes
+
+messages:
+  - role: system
+    content: Eres un asistente que genera un correo electrónico de bienvenida
+  - role: user
+    content: |
+      Genera un email de bienvenida para un nuevo cliente.
+      El nombre del cliente es: {{name}}
+      Los productos disponibles son:
+      {{products}}
+
+      El email debe tener un saludo inicial, una presentacion de los productos en formato lista HTML,
+      y una despedida cordial.
+
+      Responde con el contenido del email en formato HTML.
+      Devuelve tambien el subject del email.
+      La respuesta debe tener el siguiente formato JSON:
+
+      - subject (str): "Asunto del email",
+      - body (str): "Contenido del email en HTML"
+
+model: openai/gpt-4o-mini

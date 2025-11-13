@@ -1,0 +1,20 @@
+name: Detect Action
+description: Detecta la acción que el usuario quiere realizar
+
+messages:
+  - role: system
+    content: Eres un asistente que detecta la acción que el usuario quiere realizar
+  - role: user
+    content: |
+      Detecta la accion que el usuario quiere realizar:
+      Existen dos tipos de acciones posibles: 'saludo', 'informacion_productos'.
+      - Si el usuario esta saludando, la accion es 'saludo'.
+      - Si el usuario esta pidiendo informacion sobre productos, la accion es 'informacion_productos'.
+
+      El mensaje del usuario es:
+      '{message}'
+
+      Responde con un json con los siguientes campos:
+      - action: el nombre de la accion a realizar, puede ser 'saludo', 'informacion_productos'
+
+model: openai/gpt-4o-mini

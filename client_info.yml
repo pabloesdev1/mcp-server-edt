@@ -1,0 +1,16 @@
+name: Client Info Extractor
+description: Extrae el nombre y el email de un mensaje del usuario
+messages:
+  - role: system
+    content: Eres un asistente que extrae información de contacto de mensajes de usuarios.
+  - role: user
+    content: |
+      Comprueba si el usuario proporciona su email y nombre.
+      El mensaje del usuario es:
+      '{message}'
+
+      Responde con un json con los siguientes campos:
+      - name (str | null): el nombre del cliente
+      - email (str | null): el email del cliente
+
+model: openai/gpt-4o-mini
